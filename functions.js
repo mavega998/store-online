@@ -35,6 +35,8 @@ function searchWord(texto, indice, palabra) {
         } else if (texto.charAt(i) == palabra.charAt(j).toLowerCase()) {
             // console.log("CLC",texto.charAt(i) == palabra.charAt(j).toLowerCase());
             word += texto.charAt(i);
+        } else if (texto.charAt(i) == palabra.charAt(j).toUpperCase()) {
+            word += texto.charAt(i);
         }
         j++;
     }
@@ -47,8 +49,8 @@ function nuevoTexto(query) {
     let brand = searchBrand(q);
     let cloth = searchClothes(q);
 
-    console.log(brand);
-    console.log(cloth);
+    // console.log(brand);
+    // console.log(cloth);
 
     if (brand.length > 0) {
         brand.forEach(b => {
