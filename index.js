@@ -16,18 +16,13 @@ app.get('/', (req, res, next) => {
 });
 app.post('/search', (req, res) => {
     const query = req.body.query;
-    console.log(query);
-    if (query) {
-        let aux = query.split(" ");
-        let texto = funcion.nuevoTexto(query);
-        let form = "<form action='/search' method='POST'><table><tr><td colspan='2'><input type='search' name='query' placeholder='Buscar'></td></tr><tr><td><button type='submit'>Buscar</button></td><td><button type='reset'>Limpiar</button></td></tr></table></form>";
-        form += "Buscando: " + query;
-        // console.log(texto);
-        form += "<br>Resultado: " + texto;
-        res.send(form);
-    } else {
-        res.render('index');
-    }
+    let aux = query.split(" ");
+    let texto = funcion.nuevoTexto(query);
+    let form = "<form action='/search' method='POST'><table><tr><td colspan='2'><input type='search' name='query' placeholder='Buscar'></td></tr><tr><td><button type='submit'>Buscar</button></td><td><button type='reset'>Limpiar</button></td></tr></table></form>";
+    form += "Buscando: " + query;
+    // console.log(texto);
+    form += "<br>Resultado: " + texto;
+    res.send(form);
 });
 
 // app.use('/data', datos);
